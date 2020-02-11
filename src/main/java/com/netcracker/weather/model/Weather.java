@@ -1,12 +1,12 @@
 package com.netcracker.weather.model;
 
 public class Weather {
-    private String apiId;
-    private float temperature;
-    private String weatherDescription;
-    private float windSpeed;
-    private float windDegree;
-    private float cloudCover;
+    private String apiId;               // weatherAPI
+    private float temperature;          // temperature in celsius
+    private String weatherDescription;  //
+    private float windSpeed;            // meter per second
+    private float windDegree;           //
+    private float cloudCover;           // Cloudiness, %
 
     public Weather(String apiId, float temperature, String weatherDescription, float windSpeed, float windDegree, float cloudCover) {
         this.apiId = apiId;

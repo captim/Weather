@@ -16,31 +16,40 @@ public class MainController {
     private List<WeatherAPI> list;
     private final WeatherAPI weatherStack;
     private final WeatherAPI openWeatherMap;
+    private final WeatherAPI darkSky;
     @Value(value = "${api.weather.numberofthread}")
     int numberOfThread;
-    public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap) {
+    public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap, WeatherAPI darkSky) {
         this.weatherStack = weatherStack;
         this.openWeatherMap = openWeatherMap;
+        this.darkSky = darkSky;
         list = new ArrayList<>();
         list.add(weatherStack);
         list.add(openWeatherMap);
+        list.add(darkSky);
     }
-
     @RequestMapping(value="/w1", method=RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody
-    Weather weatherStack(@RequestParam(defaultValue = "sumy") String city) throws IOException {
+    public Weather weatherStack(@RequestParam(defaultValue = "sumy") String city)
+            throws IOException {
         return weatherStack.getRequest(city);
     }
     @RequestMapping(value="/w2", method=RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody Weather openWeather(@RequestParam(defaultValue = "sumy") String city) throws IOException {
+    public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)
+            throws IOException {
         return openWeatherMap.getRequest(city);
+    }
+    @RequestMapping(value="/w3", method=RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public Weather darkSky(@RequestParam(defaultValue = "sumy") String city)
+            throws IOException {
+        return darkSky.getRequest(city);
     }
     @RequestMapping(value="/w", method=RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody List<Weather> allWeather(@RequestParam(defaultValue = "sumy") String city) throws ExecutionException, InterruptedException {
-
+    public List<Weather> allWeather(@RequestParam(defaultValue = "sumy") String city)
+            throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(numberOfThread);
         ExecutorCompletionService<Weather> completionService
                 = new ExecutorCompletionService<>(executorService);
