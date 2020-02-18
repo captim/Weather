@@ -2,9 +2,11 @@ package com.netcracker.weather.controller;
 
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.WeatherAPI;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,49 +15,62 @@ import java.util.concurrent.*;
 
 @RestController
 public class MainController {
-    private List<WeatherAPI> list;
+    private final List<WeatherAPI> list;
+    @Autowired
     private final WeatherAPI weatherStack;
+    @Autowired
     private final WeatherAPI openWeatherMap;
+    @Autowired
     private final WeatherAPI darkSky;
+    @Autowired
+    private final WeatherAPI weatherBit;
     @Value(value = "${api.weather.numberofthread}")
     int numberOfThread;
-    public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap, WeatherAPI darkSky) {
+    public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap,
+                          WeatherAPI darkSky, WeatherAPI weatherBit) {
         this.weatherStack = weatherStack;
         this.openWeatherMap = openWeatherMap;
         this.darkSky = darkSky;
+        this.weatherBit = weatherBit;
         list = new ArrayList<>();
-        list.add(weatherStack);
-        list.add(openWeatherMap);
-        list.add(darkSky);
+        list.add(this.weatherStack);
+        list.add(this.openWeatherMap);
+        list.add(this.darkSky);
+        list.add(this.weatherBit);
     }
-    @RequestMapping(value="/w1", method=RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public Weather weatherStack(@RequestParam(defaultValue = "sumy") String city)
+    @RequestMapping(value = "/w1")
+    public Weather weatherStack(@RequestParam(defaultValue = "sumy")
+                                            String city)
             throws IOException {
         return weatherStack.getRequest(city);
     }
-    @RequestMapping(value="/w2", method=RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)
             throws IOException {
         return openWeatherMap.getRequest(city);
     }
-    @RequestMapping(value="/w3", method=RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/w3")
     public Weather darkSky(@RequestParam(defaultValue = "sumy") String city)
             throws IOException {
         return darkSky.getRequest(city);
     }
-    @RequestMapping(value="/w", method=RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public List<Weather> allWeather(@RequestParam(defaultValue = "sumy") String city)
+    @RequestMapping(value = "/w4")
+    public Weather weatherBit(@RequestParam(defaultValue = "sumy") String city)
+            throws IOException {
+        return weatherBit.getRequest(city);
+    }
+    @RequestMapping(value = "/w")
+    public List<Weather> allWeather(@RequestParam(defaultValue = "sumy")
+                                                String city)
             throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(numberOfThread);
+        ExecutorService executorService =
+                Executors.newFixedThreadPool(numberOfThread);
         ExecutorCompletionService<Weather> completionService
                 = new ExecutorCompletionService<>(executorService);
         List<Weather> weatherList = new ArrayList<>();
         for (WeatherAPI temp: list) {
-            Future<Weather> submit = completionService.submit(() -> temp.getRequest(city));
+            Future<Weather> submit =
+                    completionService.submit(() -> temp.getRequest(city));
             weatherList.add(submit.get());
         }
         return weatherList;

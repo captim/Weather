@@ -1,7 +1,7 @@
 package com.netcracker.weather.model.service;
 
 import com.netcracker.weather.model.Weather;
-import com.netcracker.weather.model.service.pojo.weatherstack.WeatherStackPOJO;
+import com.netcracker.weather.model.service.pojo.weatherbit.WeatherBitPOJO;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -17,31 +17,34 @@ import java.io.IOException;
 
 @Service
 @PropertySource("classpath:/application.properties")
-public class WeatherStack implements WeatherAPI {
-    @Value(value = "${api.weather.weatherstack.id}")
+public class WeatherBit implements WeatherAPI {
+    @Value(value = "${api.weather.weatherbit.id}")
     private String id;
     @Autowired
     private ConversionService conversionService;
     @Override
     public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
-        String http = "http://api.weatherstack.com/current?access_key="
-                + "5434e0086e05699b55d699289d46bc66&query=" + city;
+        String http = "https://api.weatherbit.io/v2.0/current?city="
+                + city + "&key=0c191ee6bb634e03bc7d8e2d3db2340f";
         HttpGet httpGet = new HttpGet(http);
         HttpResponse httpResponse = httpClient.execute(httpGet);
         return createWeather(EntityUtils.toString(httpResponse.getEntity()));
     }
+
     public Weather createWeather(String json) {
         Weather weather =
                 conversionService.convert(conversionService.convert(json,
-                WeatherStackPOJO.class), Weather.class);
+                WeatherBitPOJO.class), Weather.class);
         weather.setApiId(id);
         return weather;
     }
+
     @Override
     public String getId() {
         return id;
     }
+
     @Override
     public void setId(String id) {
         this.id = id;

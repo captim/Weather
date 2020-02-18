@@ -1,32 +1,20 @@
 package com.netcracker.weather.model;
 
 public class Weather {
-    private String apiId;               // weatherAPI
-    private float temperature;          // temperature in celsius
-    private String weatherDescription;  //
-    private float windSpeed;            // meter per second
-    private float windDegree;           //
-    private float cloudCover;           // Cloudiness, %
+    private String apiId;
+    private double temperature;
+    private String weatherDescription;
+    private double windSpeed;
+    private double windDegree;
+    private double cloudCover;
 
-    public Weather(String apiId, float temperature, String weatherDescription, float windSpeed, float windDegree, float cloudCover) {
-        this.apiId = apiId;
+    public Weather(double temperature, String weatherDescription,
+                   double windSpeed, double windDegree, double cloudCover) {
         this.temperature = temperature;
         this.weatherDescription = weatherDescription;
         this.windSpeed = windSpeed;
         this.windDegree = windDegree;
         this.cloudCover = cloudCover;
-    }
-
-    @Override
-    public String toString() {
-        return "Weather{" +
-                "apiId='" + apiId + '\'' +
-                ", temperature=" + temperature +
-                ", weatherDescription='" + weatherDescription + '\'' +
-                ", windSpeed=" + windSpeed +
-                ", windDegree=" + windDegree +
-                ", cloudCover=" + cloudCover +
-                '}';
     }
 
     public String getApiId() {
@@ -37,11 +25,11 @@ public class Weather {
         this.apiId = apiId;
     }
 
-    public float getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
@@ -53,27 +41,27 @@ public class Weather {
         this.weatherDescription = weatherDescription;
     }
 
-    public float getWindSpeed() {
+    public double getWindSpeed() {
         return windSpeed;
     }
 
-    public void setWindSpeed(float windSpeed) {
+    public void setWindSpeed(double windSpeed) {
         this.windSpeed = windSpeed;
     }
 
-    public float getWindDegree() {
+    public double getWindDegree() {
         return windDegree;
     }
 
-    public void setWindDegree(float windDegree) {
+    public void setWindDegree(double windDegree) {
         this.windDegree = windDegree;
     }
 
-    public float getCloudCover() {
+    public double getCloudCover() {
         return cloudCover;
     }
 
-    public void setCloudCover(float cloudCover) {
+    public void setCloudCover(double cloudCover) {
         this.cloudCover = cloudCover;
     }
 }
