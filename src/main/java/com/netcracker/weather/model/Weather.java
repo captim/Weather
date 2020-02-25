@@ -1,5 +1,7 @@
 package com.netcracker.weather.model;
 
+import java.util.Objects;
+
 public class Weather {
     private String apiId;
     private double temperature;
@@ -15,6 +17,36 @@ public class Weather {
         this.windSpeed = windSpeed;
         this.windDegree = windDegree;
         this.cloudCover = cloudCover;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Weather weather = (Weather) o;
+        return Double.compare(weather.temperature, temperature) == 0 &&
+                Double.compare(weather.windSpeed, windSpeed) == 0 &&
+                Double.compare(weather.windDegree, windDegree) == 0 &&
+                Double.compare(weather.cloudCover, cloudCover) == 0 &&
+                Objects.equals(apiId, weather.apiId) &&
+                Objects.equals(weatherDescription, weather.weatherDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(apiId, temperature, weatherDescription, windSpeed, windDegree, cloudCover);
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "apiId='" + apiId + '\'' +
+                ", temperature=" + temperature +
+                ", weatherDescription='" + weatherDescription + '\'' +
+                ", windSpeed=" + windSpeed +
+                ", windDegree=" + windDegree +
+                ", cloudCover=" + cloudCover +
+                '}';
     }
 
     public String getApiId() {
