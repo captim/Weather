@@ -22,8 +22,12 @@ public class WeatherBit implements WeatherAPI {
     private String id;
     @Value(value = "${api.weather.weatherbit.key}")
     private String key;
+    private final ConversionService conversionService;
     @Autowired
-    private ConversionService conversionService;
+    public WeatherBit(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
     @Override
     public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();

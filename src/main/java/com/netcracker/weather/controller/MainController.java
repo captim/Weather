@@ -16,16 +16,13 @@ import java.util.concurrent.*;
 @RestController
 public class MainController {
     private final List<WeatherAPI> list;
-    @Autowired
     private final WeatherAPI weatherStack;
-    @Autowired
     private final WeatherAPI openWeatherMap;
-    @Autowired
     private final WeatherAPI darkSky;
-    @Autowired
     private final WeatherAPI weatherBit;
     @Value(value = "${api.weather.numberofthread}")
     int numberOfThread;
+    @Autowired
     public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap,
                           WeatherAPI darkSky, WeatherAPI weatherBit) {
         this.weatherStack = weatherStack;

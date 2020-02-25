@@ -22,8 +22,12 @@ public class DarkSky implements WeatherAPI {
     private String id;
     @Value(value = "${api.weather.darksky.key}")
     private String key;
+    private final ConversionService conversionService;
     @Autowired
-    private ConversionService conversionService;
+    public DarkSky(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
     @Override
         public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
