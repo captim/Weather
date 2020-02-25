@@ -2,6 +2,8 @@ package com.netcracker.weather.model.service.pojo.weatherstack;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -66,4 +68,29 @@ public class WeatherStackPOJO {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherStackPOJO that = (WeatherStackPOJO) o;
+        return Objects.equals(request, that.request) &&
+                Objects.equals(location, that.location) &&
+                Objects.equals(current, that.current) &&
+                Objects.equals(additionalProperties, that.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(request, location, current, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "WeatherStackPOJO{" +
+                "request=" + request +
+                ", location=" + location +
+                ", current=" + current +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

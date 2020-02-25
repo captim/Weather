@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -232,4 +233,55 @@ public class Current {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Current{" +
+                "observationTime='" + observationTime + '\'' +
+                ", temperature=" + temperature +
+                ", weatherCode=" + weatherCode +
+                ", weatherIcons=" + weatherIcons +
+                ", weatherDescriptions=" + weatherDescriptions +
+                ", windSpeed=" + windSpeed +
+                ", windDegree=" + windDegree +
+                ", windDir='" + windDir + '\'' +
+                ", pressure=" + pressure +
+                ", precip=" + precip +
+                ", humidity=" + humidity +
+                ", cloudcover=" + cloudcover +
+                ", feelslike=" + feelslike +
+                ", uvIndex=" + uvIndex +
+                ", visibility=" + visibility +
+                ", isDay='" + isDay + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Current current = (Current) o;
+        return Objects.equals(observationTime, current.observationTime) &&
+                Objects.equals(temperature, current.temperature) &&
+                Objects.equals(weatherCode, current.weatherCode) &&
+                Objects.equals(weatherIcons, current.weatherIcons) &&
+                Objects.equals(weatherDescriptions, current.weatherDescriptions) &&
+                Objects.equals(windSpeed, current.windSpeed) &&
+                Objects.equals(windDegree, current.windDegree) &&
+                Objects.equals(windDir, current.windDir) &&
+                Objects.equals(pressure, current.pressure) &&
+                Objects.equals(precip, current.precip) &&
+                Objects.equals(humidity, current.humidity) &&
+                Objects.equals(cloudcover, current.cloudcover) &&
+                Objects.equals(feelslike, current.feelslike) &&
+                Objects.equals(uvIndex, current.uvIndex) &&
+                Objects.equals(visibility, current.visibility) &&
+                Objects.equals(isDay, current.isDay) &&
+                Objects.equals(additionalProperties, current.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(observationTime, temperature, weatherCode, weatherIcons, weatherDescriptions, windSpeed, windDegree, windDir, pressure, precip, humidity, cloudcover, feelslike, uvIndex, visibility, isDay, additionalProperties);
+    }
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -49,4 +50,27 @@ public class Wind {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Wind wind = (Wind) o;
+        return Objects.equals(speed, wind.speed) &&
+                Objects.equals(deg, wind.deg) &&
+                Objects.equals(additionalProperties, wind.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(speed, deg, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Wind{" +
+                "speed=" + speed +
+                ", deg=" + deg +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

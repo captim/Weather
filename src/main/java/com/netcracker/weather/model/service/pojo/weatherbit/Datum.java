@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -504,4 +505,97 @@ public class Datum {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Datum datum = (Datum) o;
+        return Objects.equals(rh, datum.rh) &&
+                Objects.equals(pod, datum.pod) &&
+                Objects.equals(lon, datum.lon) &&
+                Objects.equals(pres, datum.pres) &&
+                Objects.equals(timezone, datum.timezone) &&
+                Objects.equals(obTime, datum.obTime) &&
+                Objects.equals(countryCode, datum.countryCode) &&
+                Objects.equals(clouds, datum.clouds) &&
+                Objects.equals(ts, datum.ts) &&
+                Objects.equals(solarRad, datum.solarRad) &&
+                Objects.equals(stateCode, datum.stateCode) &&
+                Objects.equals(cityName, datum.cityName) &&
+                Objects.equals(windSpd, datum.windSpd) &&
+                Objects.equals(lastObTime, datum.lastObTime) &&
+                Objects.equals(windCdirFull, datum.windCdirFull) &&
+                Objects.equals(windCdir, datum.windCdir) &&
+                Objects.equals(slp, datum.slp) &&
+                Objects.equals(vis, datum.vis) &&
+                Objects.equals(hAngle, datum.hAngle) &&
+                Objects.equals(sunset, datum.sunset) &&
+                Objects.equals(dni, datum.dni) &&
+                Objects.equals(dewpt, datum.dewpt) &&
+                Objects.equals(snow, datum.snow) &&
+                Objects.equals(uv, datum.uv) &&
+                Objects.equals(precip, datum.precip) &&
+                Objects.equals(windDir, datum.windDir) &&
+                Objects.equals(sunrise, datum.sunrise) &&
+                Objects.equals(ghi, datum.ghi) &&
+                Objects.equals(dhi, datum.dhi) &&
+                Objects.equals(aqi, datum.aqi) &&
+                Objects.equals(lat, datum.lat) &&
+                Objects.equals(weather, datum.weather) &&
+                Objects.equals(datetime, datum.datetime) &&
+                Objects.equals(temp, datum.temp) &&
+                Objects.equals(station, datum.station) &&
+                Objects.equals(elevAngle, datum.elevAngle) &&
+                Objects.equals(appTemp, datum.appTemp) &&
+                Objects.equals(additionalProperties, datum.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rh, pod, lon, pres, timezone, obTime, countryCode, clouds, ts, solarRad, stateCode, cityName, windSpd, lastObTime, windCdirFull, windCdir, slp, vis, hAngle, sunset, dni, dewpt, snow, uv, precip, windDir, sunrise, ghi, dhi, aqi, lat, weather, datetime, temp, station, elevAngle, appTemp, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Datum{" +
+                "rh=" + rh +
+                ", pod='" + pod + '\'' +
+                ", lon=" + lon +
+                ", pres=" + pres +
+                ", timezone='" + timezone + '\'' +
+                ", obTime='" + obTime + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", clouds=" + clouds +
+                ", ts=" + ts +
+                ", solarRad=" + solarRad +
+                ", stateCode='" + stateCode + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", windSpd=" + windSpd +
+                ", lastObTime='" + lastObTime + '\'' +
+                ", windCdirFull='" + windCdirFull + '\'' +
+                ", windCdir='" + windCdir + '\'' +
+                ", slp=" + slp +
+                ", vis=" + vis +
+                ", hAngle=" + hAngle +
+                ", sunset='" + sunset + '\'' +
+                ", dni=" + dni +
+                ", dewpt=" + dewpt +
+                ", snow=" + snow +
+                ", uv=" + uv +
+                ", precip=" + precip +
+                ", windDir=" + windDir +
+                ", sunrise='" + sunrise + '\'' +
+                ", ghi=" + ghi +
+                ", dhi=" + dhi +
+                ", aqi=" + aqi +
+                ", lat=" + lat +
+                ", weather=" + weather +
+                ", datetime='" + datetime + '\'' +
+                ", temp=" + temp +
+                ", station='" + station + '\'' +
+                ", elevAngle=" + elevAngle +
+                ", appTemp=" + appTemp +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

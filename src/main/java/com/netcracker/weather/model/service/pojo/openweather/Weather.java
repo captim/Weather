@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -75,4 +76,31 @@ public class Weather {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Weather weather = (Weather) o;
+        return Objects.equals(id, weather.id) &&
+                Objects.equals(main, weather.main) &&
+                Objects.equals(description, weather.description) &&
+                Objects.equals(icon, weather.icon) &&
+                Objects.equals(additionalProperties, weather.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, main, description, icon, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "id=" + id +
+                ", main='" + main + '\'' +
+                ", description='" + description + '\'' +
+                ", icon='" + icon + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

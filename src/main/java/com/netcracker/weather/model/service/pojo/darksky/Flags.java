@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,6 +17,33 @@ public class Flags {
 
     @JsonProperty("sources")
     private List<String> sources = null;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flags flags = (Flags) o;
+        return Objects.equals(sources, flags.sources) &&
+                Objects.equals(nearestStation, flags.nearestStation) &&
+                Objects.equals(units, flags.units) &&
+                Objects.equals(additionalProperties, flags.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sources, nearestStation, units, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Flags{" +
+                "sources=" + sources +
+                ", nearestStation=" + nearestStation +
+                ", units='" + units + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
     @JsonProperty("nearest-station")
     private Double nearestStation;
     @JsonProperty("units")

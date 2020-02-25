@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -244,4 +245,57 @@ public class Currently {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Currently currently = (Currently) o;
+        return Objects.equals(time, currently.time) &&
+                Objects.equals(summary, currently.summary) &&
+                Objects.equals(icon, currently.icon) &&
+                Objects.equals(precipIntensity, currently.precipIntensity) &&
+                Objects.equals(precipProbability, currently.precipProbability) &&
+                Objects.equals(temperature, currently.temperature) &&
+                Objects.equals(apparentTemperature, currently.apparentTemperature) &&
+                Objects.equals(dewPoint, currently.dewPoint) &&
+                Objects.equals(humidity, currently.humidity) &&
+                Objects.equals(pressure, currently.pressure) &&
+                Objects.equals(windSpeed, currently.windSpeed) &&
+                Objects.equals(windGust, currently.windGust) &&
+                Objects.equals(windBearing, currently.windBearing) &&
+                Objects.equals(cloudCover, currently.cloudCover) &&
+                Objects.equals(uvIndex, currently.uvIndex) &&
+                Objects.equals(visibility, currently.visibility) &&
+                Objects.equals(ozone, currently.ozone) &&
+                Objects.equals(additionalProperties, currently.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, summary, icon, precipIntensity, precipProbability, temperature, apparentTemperature, dewPoint, humidity, pressure, windSpeed, windGust, windBearing, cloudCover, uvIndex, visibility, ozone, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Currently{" +
+                "time=" + time +
+                ", summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", precipIntensity=" + precipIntensity +
+                ", precipProbability=" + precipProbability +
+                ", temperature=" + temperature +
+                ", apparentTemperature=" + apparentTemperature +
+                ", dewPoint=" + dewPoint +
+                ", humidity=" + humidity +
+                ", pressure=" + pressure +
+                ", windSpeed=" + windSpeed +
+                ", windGust=" + windGust +
+                ", windBearing=" + windBearing +
+                ", cloudCover=" + cloudCover +
+                ", uvIndex=" + uvIndex +
+                ", visibility=" + visibility +
+                ", ozone=" + ozone +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

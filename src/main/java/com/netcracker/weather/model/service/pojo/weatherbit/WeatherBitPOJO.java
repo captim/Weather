@@ -3,6 +3,8 @@ package com.netcracker.weather.model.service.pojo.weatherbit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -53,4 +55,27 @@ public class WeatherBitPOJO {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "WeatherBitPOJO{" +
+                "data=" + data +
+                ", count=" + count +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherBitPOJO that = (WeatherBitPOJO) o;
+        return Objects.equals(data, that.data) &&
+                Objects.equals(count, that.count) &&
+                Objects.equals(additionalProperties, that.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data, count, additionalProperties);
+    }
 }

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "latitude",
@@ -16,6 +18,41 @@ import java.util.Map;
         "offset"
 })
 public class DarkSkyPOJO {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DarkSkyPOJO that = (DarkSkyPOJO) o;
+        return Objects.equals(latitude, that.latitude) &&
+                Objects.equals(longitude, that.longitude) &&
+                Objects.equals(timezone, that.timezone) &&
+                Objects.equals(currently, that.currently) &&
+                Objects.equals(hourly, that.hourly) &&
+                Objects.equals(daily, that.daily) &&
+                Objects.equals(flags, that.flags) &&
+                Objects.equals(offset, that.offset) &&
+                Objects.equals(additionalProperties, that.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(latitude, longitude, timezone, currently, hourly, daily, flags, offset, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "DarkSkyPOJO{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", timezone='" + timezone + '\'' +
+                ", currently=" + currently +
+                ", hourly=" + hourly +
+                ", daily=" + daily +
+                ", flags=" + flags +
+                ", offset=" + offset +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 
     @JsonProperty("latitude")
     private Double latitude;

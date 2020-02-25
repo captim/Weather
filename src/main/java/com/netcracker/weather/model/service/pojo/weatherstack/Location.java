@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -140,4 +141,41 @@ public class Location {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", region='" + region + '\'' +
+                ", lat='" + lat + '\'' +
+                ", lon='" + lon + '\'' +
+                ", timezoneId='" + timezoneId + '\'' +
+                ", localtime='" + localtime + '\'' +
+                ", localtimeEpoch=" + localtimeEpoch +
+                ", utcOffset='" + utcOffset + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return Objects.equals(name, location.name) &&
+                Objects.equals(country, location.country) &&
+                Objects.equals(region, location.region) &&
+                Objects.equals(lat, location.lat) &&
+                Objects.equals(lon, location.lon) &&
+                Objects.equals(timezoneId, location.timezoneId) &&
+                Objects.equals(localtime, location.localtime) &&
+                Objects.equals(localtimeEpoch, location.localtimeEpoch) &&
+                Objects.equals(utcOffset, location.utcOffset) &&
+                Objects.equals(additionalProperties, location.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, country, region, lat, lon, timezoneId, localtime, localtimeEpoch, utcOffset, additionalProperties);
+    }
 }

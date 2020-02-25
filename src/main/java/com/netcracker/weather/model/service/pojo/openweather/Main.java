@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -127,4 +128,39 @@ public class Main {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Main main = (Main) o;
+        return Objects.equals(temp, main.temp) &&
+                Objects.equals(feelsLike, main.feelsLike) &&
+                Objects.equals(tempMin, main.tempMin) &&
+                Objects.equals(tempMax, main.tempMax) &&
+                Objects.equals(pressure, main.pressure) &&
+                Objects.equals(humidity, main.humidity) &&
+                Objects.equals(seaLevel, main.seaLevel) &&
+                Objects.equals(grndLevel, main.grndLevel) &&
+                Objects.equals(additionalProperties, main.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(temp, feelsLike, tempMin, tempMax, pressure, humidity, seaLevel, grndLevel, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Main{" +
+                "temp=" + temp +
+                ", feelsLike=" + feelsLike +
+                ", tempMin=" + tempMin +
+                ", tempMax=" + tempMax +
+                ", pressure=" + pressure +
+                ", humidity=" + humidity +
+                ", seaLevel=" + seaLevel +
+                ", grndLevel=" + grndLevel +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -13,9 +14,35 @@ import java.util.Map;
         "data"
 })
 public class Hourly {
+    @Override
+    public String toString() {
+        return "Hourly{" +
+                "summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", data=" + data +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 
     @JsonProperty("summary")
     private String summary;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hourly hourly = (Hourly) o;
+        return Objects.equals(summary, hourly.summary) &&
+                Objects.equals(icon, hourly.icon) &&
+                Objects.equals(data, hourly.data) &&
+                Objects.equals(additionalProperties, hourly.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(summary, icon, data, additionalProperties);
+    }
+
     @JsonProperty("icon")
     private String icon;
     @JsonProperty("data")

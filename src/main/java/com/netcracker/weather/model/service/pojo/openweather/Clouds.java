@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,6 +17,14 @@ public class Clouds {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    @Override
+    public String toString() {
+        return "Clouds{" +
+                "all=" + all +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
     @JsonProperty("all")
     public Integer getAll() {
         return all;
@@ -24,6 +33,20 @@ public class Clouds {
     @JsonProperty("all")
     public void setAll(Integer all) {
         this.all = all;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Clouds clouds = (Clouds) o;
+        return Objects.equals(all, clouds.all) &&
+                Objects.equals(additionalProperties, clouds.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(all, additionalProperties);
     }
 
     @JsonAnyGetter

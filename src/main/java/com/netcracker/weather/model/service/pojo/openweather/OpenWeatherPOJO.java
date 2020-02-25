@@ -3,6 +3,8 @@ package com.netcracker.weather.model.service.pojo.openweather;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -183,4 +185,47 @@ public class OpenWeatherPOJO {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpenWeatherPOJO that = (OpenWeatherPOJO) o;
+        return Objects.equals(coord, that.coord) &&
+                Objects.equals(weather, that.weather) &&
+                Objects.equals(base, that.base) &&
+                Objects.equals(main, that.main) &&
+                Objects.equals(wind, that.wind) &&
+                Objects.equals(clouds, that.clouds) &&
+                Objects.equals(dt, that.dt) &&
+                Objects.equals(sys, that.sys) &&
+                Objects.equals(timezone, that.timezone) &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(cod, that.cod) &&
+                Objects.equals(additionalProperties, that.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coord, weather, base, main, wind, clouds, dt, sys, timezone, id, name, cod, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "OpenWeatherPOJO{" +
+                "coord=" + coord +
+                ", weather=" + weather +
+                ", base='" + base + '\'' +
+                ", main=" + main +
+                ", wind=" + wind +
+                ", clouds=" + clouds +
+                ", dt=" + dt +
+                ", sys=" + sys +
+                ", timezone=" + timezone +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", cod=" + cod +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

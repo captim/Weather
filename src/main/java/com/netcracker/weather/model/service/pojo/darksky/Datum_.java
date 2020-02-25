@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -58,6 +59,107 @@ public class Datum_ {
     private String icon;
     @JsonProperty("sunriseTime")
     private Integer sunriseTime;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Datum_ datum_ = (Datum_) o;
+        return Objects.equals(time, datum_.time) &&
+                Objects.equals(summary, datum_.summary) &&
+                Objects.equals(icon, datum_.icon) &&
+                Objects.equals(sunriseTime, datum_.sunriseTime) &&
+                Objects.equals(sunsetTime, datum_.sunsetTime) &&
+                Objects.equals(moonPhase, datum_.moonPhase) &&
+                Objects.equals(precipIntensity, datum_.precipIntensity) &&
+                Objects.equals(precipIntensityMax, datum_.precipIntensityMax) &&
+                Objects.equals(precipIntensityMaxTime, datum_.precipIntensityMaxTime) &&
+                Objects.equals(precipProbability, datum_.precipProbability) &&
+                Objects.equals(precipType, datum_.precipType) &&
+                Objects.equals(precipAccumulation, datum_.precipAccumulation) &&
+                Objects.equals(temperatureHigh, datum_.temperatureHigh) &&
+                Objects.equals(temperatureHighTime, datum_.temperatureHighTime) &&
+                Objects.equals(temperatureLow, datum_.temperatureLow) &&
+                Objects.equals(temperatureLowTime, datum_.temperatureLowTime) &&
+                Objects.equals(apparentTemperatureHigh, datum_.apparentTemperatureHigh) &&
+                Objects.equals(apparentTemperatureHighTime, datum_.apparentTemperatureHighTime) &&
+                Objects.equals(apparentTemperatureLow, datum_.apparentTemperatureLow) &&
+                Objects.equals(apparentTemperatureLowTime, datum_.apparentTemperatureLowTime) &&
+                Objects.equals(dewPoint, datum_.dewPoint) &&
+                Objects.equals(humidity, datum_.humidity) &&
+                Objects.equals(pressure, datum_.pressure) &&
+                Objects.equals(windSpeed, datum_.windSpeed) &&
+                Objects.equals(windGust, datum_.windGust) &&
+                Objects.equals(windGustTime, datum_.windGustTime) &&
+                Objects.equals(windBearing, datum_.windBearing) &&
+                Objects.equals(cloudCover, datum_.cloudCover) &&
+                Objects.equals(uvIndex, datum_.uvIndex) &&
+                Objects.equals(uvIndexTime, datum_.uvIndexTime) &&
+                Objects.equals(visibility, datum_.visibility) &&
+                Objects.equals(ozone, datum_.ozone) &&
+                Objects.equals(temperatureMin, datum_.temperatureMin) &&
+                Objects.equals(temperatureMinTime, datum_.temperatureMinTime) &&
+                Objects.equals(temperatureMax, datum_.temperatureMax) &&
+                Objects.equals(temperatureMaxTime, datum_.temperatureMaxTime) &&
+                Objects.equals(apparentTemperatureMin, datum_.apparentTemperatureMin) &&
+                Objects.equals(apparentTemperatureMinTime, datum_.apparentTemperatureMinTime) &&
+                Objects.equals(apparentTemperatureMax, datum_.apparentTemperatureMax) &&
+                Objects.equals(apparentTemperatureMaxTime, datum_.apparentTemperatureMaxTime) &&
+                Objects.equals(additionalProperties, datum_.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, summary, icon, sunriseTime, sunsetTime, moonPhase, precipIntensity, precipIntensityMax, precipIntensityMaxTime, precipProbability, precipType, precipAccumulation, temperatureHigh, temperatureHighTime, temperatureLow, temperatureLowTime, apparentTemperatureHigh, apparentTemperatureHighTime, apparentTemperatureLow, apparentTemperatureLowTime, dewPoint, humidity, pressure, windSpeed, windGust, windGustTime, windBearing, cloudCover, uvIndex, uvIndexTime, visibility, ozone, temperatureMin, temperatureMinTime, temperatureMax, temperatureMaxTime, apparentTemperatureMin, apparentTemperatureMinTime, apparentTemperatureMax, apparentTemperatureMaxTime, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Datum_{" +
+                "time=" + time +
+                ", summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", sunriseTime=" + sunriseTime +
+                ", sunsetTime=" + sunsetTime +
+                ", moonPhase=" + moonPhase +
+                ", precipIntensity=" + precipIntensity +
+                ", precipIntensityMax=" + precipIntensityMax +
+                ", precipIntensityMaxTime=" + precipIntensityMaxTime +
+                ", precipProbability=" + precipProbability +
+                ", precipType='" + precipType + '\'' +
+                ", precipAccumulation=" + precipAccumulation +
+                ", temperatureHigh=" + temperatureHigh +
+                ", temperatureHighTime=" + temperatureHighTime +
+                ", temperatureLow=" + temperatureLow +
+                ", temperatureLowTime=" + temperatureLowTime +
+                ", apparentTemperatureHigh=" + apparentTemperatureHigh +
+                ", apparentTemperatureHighTime=" + apparentTemperatureHighTime +
+                ", apparentTemperatureLow=" + apparentTemperatureLow +
+                ", apparentTemperatureLowTime=" + apparentTemperatureLowTime +
+                ", dewPoint=" + dewPoint +
+                ", humidity=" + humidity +
+                ", pressure=" + pressure +
+                ", windSpeed=" + windSpeed +
+                ", windGust=" + windGust +
+                ", windGustTime=" + windGustTime +
+                ", windBearing=" + windBearing +
+                ", cloudCover=" + cloudCover +
+                ", uvIndex=" + uvIndex +
+                ", uvIndexTime=" + uvIndexTime +
+                ", visibility=" + visibility +
+                ", ozone=" + ozone +
+                ", temperatureMin=" + temperatureMin +
+                ", temperatureMinTime=" + temperatureMinTime +
+                ", temperatureMax=" + temperatureMax +
+                ", temperatureMaxTime=" + temperatureMaxTime +
+                ", apparentTemperatureMin=" + apparentTemperatureMin +
+                ", apparentTemperatureMinTime=" + apparentTemperatureMinTime +
+                ", apparentTemperatureMax=" + apparentTemperatureMax +
+                ", apparentTemperatureMaxTime=" + apparentTemperatureMaxTime +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
     @JsonProperty("sunsetTime")
     private Integer sunsetTime;
     @JsonProperty("moonPhase")

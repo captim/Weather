@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -13,6 +14,31 @@ import java.util.Map;
         "data"
 })
 public class Daily {
+    @Override
+    public String toString() {
+        return "Daily{" +
+                "summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", data=" + data +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Daily daily = (Daily) o;
+        return Objects.equals(summary, daily.summary) &&
+                Objects.equals(icon, daily.icon) &&
+                Objects.equals(data, daily.data) &&
+                Objects.equals(additionalProperties, daily.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(summary, icon, data, additionalProperties);
+    }
 
     @JsonProperty("summary")
     private String summary;

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -75,4 +76,31 @@ public class Request {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Request{" +
+                "type='" + type + '\'' +
+                ", query='" + query + '\'' +
+                ", language='" + language + '\'' +
+                ", unit='" + unit + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Request request = (Request) o;
+        return Objects.equals(type, request.type) &&
+                Objects.equals(query, request.query) &&
+                Objects.equals(language, request.language) &&
+                Objects.equals(unit, request.unit) &&
+                Objects.equals(additionalProperties, request.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, query, language, unit, additionalProperties);
+    }
 }

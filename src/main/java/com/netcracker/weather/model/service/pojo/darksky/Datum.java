@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -33,6 +34,65 @@ public class Datum {
     private Integer time;
     @JsonProperty("summary")
     private String summary;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Datum datum = (Datum) o;
+        return Objects.equals(time, datum.time) &&
+                Objects.equals(summary, datum.summary) &&
+                Objects.equals(icon, datum.icon) &&
+                Objects.equals(precipIntensity, datum.precipIntensity) &&
+                Objects.equals(precipProbability, datum.precipProbability) &&
+                Objects.equals(temperature, datum.temperature) &&
+                Objects.equals(apparentTemperature, datum.apparentTemperature) &&
+                Objects.equals(dewPoint, datum.dewPoint) &&
+                Objects.equals(humidity, datum.humidity) &&
+                Objects.equals(pressure, datum.pressure) &&
+                Objects.equals(windSpeed, datum.windSpeed) &&
+                Objects.equals(windGust, datum.windGust) &&
+                Objects.equals(windBearing, datum.windBearing) &&
+                Objects.equals(cloudCover, datum.cloudCover) &&
+                Objects.equals(uvIndex, datum.uvIndex) &&
+                Objects.equals(visibility, datum.visibility) &&
+                Objects.equals(ozone, datum.ozone) &&
+                Objects.equals(precipType, datum.precipType) &&
+                Objects.equals(precipAccumulation, datum.precipAccumulation) &&
+                Objects.equals(additionalProperties, datum.additionalProperties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, summary, icon, precipIntensity, precipProbability, temperature, apparentTemperature, dewPoint, humidity, pressure, windSpeed, windGust, windBearing, cloudCover, uvIndex, visibility, ozone, precipType, precipAccumulation, additionalProperties);
+    }
+
+    @Override
+    public String toString() {
+        return "Datum{" +
+                "time=" + time +
+                ", summary='" + summary + '\'' +
+                ", icon='" + icon + '\'' +
+                ", precipIntensity=" + precipIntensity +
+                ", precipProbability=" + precipProbability +
+                ", temperature=" + temperature +
+                ", apparentTemperature=" + apparentTemperature +
+                ", dewPoint=" + dewPoint +
+                ", humidity=" + humidity +
+                ", pressure=" + pressure +
+                ", windSpeed=" + windSpeed +
+                ", windGust=" + windGust +
+                ", windBearing=" + windBearing +
+                ", cloudCover=" + cloudCover +
+                ", uvIndex=" + uvIndex +
+                ", visibility=" + visibility +
+                ", ozone=" + ozone +
+                ", precipType='" + precipType + '\'' +
+                ", precipAccumulation=" + precipAccumulation +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
     @JsonProperty("icon")
     private String icon;
     @JsonProperty("precipIntensity")
