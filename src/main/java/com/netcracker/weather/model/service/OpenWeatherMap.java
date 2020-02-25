@@ -20,13 +20,15 @@ import java.io.IOException;
 public class OpenWeatherMap implements WeatherAPI {
     @Value(value = "${api.weather.openweathermap.id}")
     private String id;
+    @Value(value = "${api.weather.openweathermap.key}")
+    private String key;
     @Autowired
     private ConversionService conversionService;
     @Override
     public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
         String http = "http://api.openweathermap.org/data/2.5/weather?q="
-                + city + "&APPID=fc90d9dd3d3211dbeefb95f3d91dbf86";
+                + city + "&APPID=" + key;
         HttpGet httpGet = new HttpGet(http);
         HttpResponse httpResponse = httpClient.execute(httpGet);
         return createWeather(EntityUtils.toString(httpResponse.getEntity()));

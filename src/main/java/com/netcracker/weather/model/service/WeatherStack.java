@@ -20,13 +20,15 @@ import java.io.IOException;
 public class WeatherStack implements WeatherAPI {
     @Value(value = "${api.weather.weatherstack.id}")
     private String id;
+    @Value(value = "${api.weather.weatherstack.key}")
+    private String key;
     @Autowired
     private ConversionService conversionService;
     @Override
     public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
         String http = "http://api.weatherstack.com/current?access_key="
-                + "5434e0086e05699b55d699289d46bc66&query=" + city;
+                + key + "&query=" + city;
         HttpGet httpGet = new HttpGet(http);
         HttpResponse httpResponse = httpClient.execute(httpGet);
         return createWeather(EntityUtils.toString(httpResponse.getEntity()));

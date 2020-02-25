@@ -20,13 +20,15 @@ import java.io.IOException;
 public class WeatherBit implements WeatherAPI {
     @Value(value = "${api.weather.weatherbit.id}")
     private String id;
+    @Value(value = "${api.weather.weatherbit.key}")
+    private String key;
     @Autowired
     private ConversionService conversionService;
     @Override
     public Weather getRequest(String city) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
         String http = "https://api.weatherbit.io/v2.0/current?city="
-                + city + "&key=0c191ee6bb634e03bc7d8e2d3db2340f";
+                + city + "&key=" + key;
         HttpGet httpGet = new HttpGet(http);
         HttpResponse httpResponse = httpClient.execute(httpGet);
         return createWeather(EntityUtils.toString(httpResponse.getEntity()));
