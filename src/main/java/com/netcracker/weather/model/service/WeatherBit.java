@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 
@@ -30,10 +31,12 @@ public class WeatherBit implements WeatherAPI {
 
     @Override
     public Weather getRequest(String city) throws IOException {
+        String url = "https://api.weatherbit.io/v2.0/current";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("city", city)
+                .queryParam("key", key);
         HttpClient httpClient = HttpClients.createDefault();
-        String http = "https://api.weatherbit.io/v2.0/current?city="
-                + city + "&key=" + key;
-        HttpGet httpGet = new HttpGet(http);
+        HttpGet httpGet = new HttpGet(builder.build().encode().toUriString());
         HttpResponse httpResponse = httpClient.execute(httpGet);
         return createWeather(EntityUtils.toString(httpResponse.getEntity()));
     }
