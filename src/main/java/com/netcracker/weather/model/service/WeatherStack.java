@@ -1,5 +1,6 @@
 package com.netcracker.weather.model.service;
 
+import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.pojo.weatherstack.WeatherStackPOJO;
 import org.apache.http.HttpResponse;
@@ -7,6 +8,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -24,6 +26,7 @@ public class WeatherStack implements WeatherAPI {
     @Value(value = "${api.weather.weatherstack.key}")
     private String key;
     private final ConversionService conversionService;
+    final static Logger logger = Logger.getLogger(WeatherStack.class);
     @Autowired
     public WeatherStack(ConversionService conversionService) {
         this.conversionService = conversionService;
@@ -31,6 +34,7 @@ public class WeatherStack implements WeatherAPI {
 
     @Override
     public Weather getRequest(String city) throws IOException {
+        logger.info(MainController.gettingRequest + getId());
         String url = "http://api.weatherstack.com/current";
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
                 .queryParam("access_key", key)

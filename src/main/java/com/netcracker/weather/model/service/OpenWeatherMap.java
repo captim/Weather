@@ -1,5 +1,6 @@
 package com.netcracker.weather.model.service;
 
+import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.pojo.openweather.OpenWeatherPOJO;
 import org.apache.http.HttpResponse;
@@ -7,6 +8,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -24,6 +26,8 @@ public class OpenWeatherMap implements WeatherAPI {
     @Value(value = "${api.weather.openweathermap.key}")
     private String key;
     private final ConversionService conversionService;
+    final static Logger logger = Logger.getLogger(OpenWeatherMap.class);
+
     @Autowired
     public OpenWeatherMap(ConversionService conversionService) {
         this.conversionService = conversionService;
@@ -31,6 +35,7 @@ public class OpenWeatherMap implements WeatherAPI {
 
     @Override
     public Weather getRequest(String city) throws IOException {
+        logger.info(MainController.gettingRequest + getId());
         String url = "http://api.openweathermap.org/data/2.5/weather";
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
                 .queryParam("q", city)
