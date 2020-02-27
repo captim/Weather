@@ -1,16 +1,28 @@
 package com.netcracker.weather.controller;
 
-import com.netcracker.weather.demo.WeatherReporterApplication;
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.WeatherAPI;
 import org.apache.log4j.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.util.IOUtils;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -43,9 +55,25 @@ public class MainController {
     @RequestMapping(value = "/w1")
     public Weather weatherStack(@RequestParam(defaultValue = "sumy")
                                             String city)
-            throws IOException {
+            throws IOException, InvalidFormatException {
         logger.info(gettingDescription + weatherStack.getId());
+        XWPFDocument document = new XWPFDocument(OPCPackage.open("template.docx"));
+        for (XWPFParagraph paragraph : document.getParagraphs()) {
+            for (XWPFRun run : paragraph.getRuns()) {
+                String text = run.getText(0);
+                text = text.replace("WEATHERAPI", "John");
+                run.setText(text,0);
+                System.out.println(text);
+            }
+        }
         return weatherStack.getRequest(city);
+    }
+    @RequestMapping(value = "/get-doc",method = RequestMethod.GET, produces="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    public byte[] getDoc() throws IOException {
+        File file = new File("template.docx");
+        FileInputStream fis = new FileInputStream(file);
+        byte[] doc = IOUtils.toByteArray(fis);
+        return doc;
     }
     @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)
