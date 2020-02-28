@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.core.convert.converter.Converter;
 
 public class JsonToDarkSkyPOJO implements Converter<String, DarkSkyPOJO> {
-    final static Logger logger = Logger.getLogger(JsonToDarkSkyPOJO.class);
+    private final static Logger logger = Logger.getLogger(JsonToDarkSkyPOJO.class);
     @Override
     public DarkSkyPOJO convert(String s) {
         logger.debug("Json is converting to DarkSkyPOJO");

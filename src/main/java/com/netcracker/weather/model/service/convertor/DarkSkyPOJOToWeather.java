@@ -1,13 +1,12 @@
 package com.netcracker.weather.model.service.convertor;
 
-import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.pojo.darksky.DarkSkyPOJO;
 import org.apache.log4j.Logger;
 import org.springframework.core.convert.converter.Converter;
 
 public class DarkSkyPOJOToWeather implements Converter<DarkSkyPOJO, Weather> {
-    final static Logger logger = Logger.getLogger(DarkSkyPOJOToWeather.class);
+    private final static Logger logger = Logger.getLogger(DarkSkyPOJOToWeather.class);
     @Override
     public Weather convert(DarkSkyPOJO w) {
         logger.debug("DarkSkyPOJO is converting to weather");

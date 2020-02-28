@@ -7,7 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 
 public class WeatherBitPOJOToWeather
         implements Converter<WeatherBitPOJO, Weather> {
-    final static Logger logger = Logger.getLogger(WeatherBitPOJOToWeather.class);
+    private final static Logger logger = Logger.getLogger(WeatherBitPOJOToWeather.class);
     @Override
     public Weather convert(WeatherBitPOJO w) {
         logger.debug("WeatherBitPOJO is converting to Weather");
