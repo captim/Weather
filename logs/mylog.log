@@ -1,0 +1,395 @@
+2020-02-26 21:06:27 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:06:28 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:09:30 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:09:30 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:34:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:34:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:34:31 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:34:31 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:34:34 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:34:34 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:34:35 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:34:35 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:34:36 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:34:36 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:34:36 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:34:36 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:34:36 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:34:36 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:34:36 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:34:37 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:34:37 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:35:04 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:35:04 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:35:04 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:35:05 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:35:05 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:35:05 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:35:05 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:35:05 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:35:05 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:35:05 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:35:05 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:35:06 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:35:06 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:35:28 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:35:28 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:35:32 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:35:32 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:35:32 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:35:32 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:35:32 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:35:32 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:35:33 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:35:33 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:35:33 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:35:33 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:35:33 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:35:34 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:35:34 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:39:16 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:39:16 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:39:22 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:39:22 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:39:23 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:39:23 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:39:23 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:39:23 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:39:23 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:39:23 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:39:23 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:39:23 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:39:23 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:39:24 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:39:24 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:39:38 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:39:38 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:41:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:41:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:41:20 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:41:20 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:41:21 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:41:21 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:41:21 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:41:21 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:41:21 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:41:21 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:41:22 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:41:22 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:41:22 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:41:22 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:41:22 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:41:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:41:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:41:42 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:41:42 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:41:43 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:41:43 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:41:43 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:41:43 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:41:43 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:41:43 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:41:44 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:41:44 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:41:44 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:41:44 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:41:44 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:43:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:43:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:43:40 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:43:40 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:43:41 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:43:41 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:43:41 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:43:41 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:43:41 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:43:41 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:43:42 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:43:42 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:43:42 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:43:42 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:43:42 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:43:42 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:43:43 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:43:43 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:43:43 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:43:43 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:43:43 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:43:43 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:43:44 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:43:44 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:43:44 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:43:44 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:43:44 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:43:59 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:43:59 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:00 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:00 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:00 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:00 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:00 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:00 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:00 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:00 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:00 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:01 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:01 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:44:01 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:01 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:01 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:01 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:01 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:01 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:01 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:02 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:02 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:02 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:03 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:03 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:44:11 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:44:11 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:11 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:11 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:11 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:11 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:11 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:11 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:12 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:12 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:12 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:13 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:13 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:44:13 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:13 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:13 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:13 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:13 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:13 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:13 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:14 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:14 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:14 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:14 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:14 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:44:18 INFO  MainController:71 - Getting weather description from all weather API
+2020-02-26 21:44:18 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:18 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:18 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:18 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:18 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:18 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:18 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:19 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:19 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:19 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:19 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:19 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:44:19 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:44:20 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:44:20 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:44:20 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:44:20 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:44:20 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:44:20 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:44:20 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:44:20 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:44:20 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:44:21 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:44:21 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:48:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:48:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:48:20 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:48:20 DEBUG WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:48:22 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:48:22 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:48:22 DEBUG OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:48:22 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:48:22 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:48:22 DEBUG DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:48:23 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:48:23 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:48:23 DEBUG WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:48:24 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:48:24 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-26 21:49:13 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:49:13 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-26 21:49:15 INFO  MainController:72 - Getting weather description from all weather API
+2020-02-26 21:49:15 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-26 21:49:15 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-26 21:49:15 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-26 21:49:15 INFO  OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-26 21:49:16 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-26 21:49:16 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-26 21:49:16 INFO  DarkSky:38 - Getting request from Dark Sky
+2020-02-26 21:49:16 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-26 21:49:16 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-26 21:49:16 INFO  WeatherBit:37 - Getting request from Weather Bit
+2020-02-26 21:49:17 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-26 21:49:17 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-27 11:53:33 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:53:33 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:00 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:00 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:04 INFO  MainController:51 - Getting weather description from Weather Stack
+2020-02-27 11:54:04 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:54:06 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:54:06 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:54:26 INFO  MainController:51 - Getting weather description from Weather Stack
+2020-02-27 11:54:26 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:54:26 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:54:26 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:54:34 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:35 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:38 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:39 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:54:42 INFO  MainController:60 - Getting weather description from Weather Stack
+2020-02-27 11:54:42 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:54:43 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:54:43 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:55:02 INFO  MainController:60 - Getting weather description from Weather Stack
+2020-02-27 11:55:02 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:55:03 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:55:03 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:55:08 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:55:08 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:56:49 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:56:49 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:56:52 INFO  MainController:60 - Getting weather description from Weather Stack
+2020-02-27 11:56:52 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:56:53 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:56:53 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:58:54 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:58:55 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:58:57 INFO  MainController:60 - Getting weather description from Weather Stack
+2020-02-27 11:58:57 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:58:58 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:58:58 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 11:59:27 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:59:27 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 11:59:30 INFO  MainController:60 - Getting weather description from Weather Stack
+2020-02-27 11:59:30 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 11:59:31 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 11:59:31 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 12:05:39 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 12:05:39 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 12:06:12 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 12:06:12 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:35:18 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:35:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:51:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:51:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:57:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:57:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:59:25 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 18:59:25 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:00:12 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:00:12 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:00:44 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:00:44 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:10:52 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:10:52 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:14:53 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:14:53 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:25:33 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:25:33 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:27:25 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:27:26 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:40:00 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:40:01 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:42:05 INFO  MainController:103 - Getting weather description from all weather API
+2020-02-27 19:42:05 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-27 19:42:06 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-27 19:42:06 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-27 19:42:06 INFO  OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-27 19:42:06 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-27 19:42:06 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-27 19:42:06 INFO  DarkSky:38 - Getting request from Dark Sky
+2020-02-27 19:42:07 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-27 19:42:07 DEBUG DarkSkyPOJOToWeather:13 - DarkSkyPOJO is converting to weather
+2020-02-27 19:42:07 INFO  WeatherBit:37 - Getting request from Weather Bit
+2020-02-27 19:42:07 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-27 19:42:07 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
+2020-02-27 19:51:19 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-27 19:51:20 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:47:57 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:47:57 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:48:23 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:48:23 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:51:58 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:51:58 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:52:21 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:52:21 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:52:34 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 13:52:34 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 14:14:20 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 14:14:20 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:07:34 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:07:34 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:09:22 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:09:22 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:11:57 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:11:58 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:59:25 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:59:25 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:59:27 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 17:59:28 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 17:59:28 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 17:59:46 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:59:46 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 17:59:59 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:00:00 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:00:00 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:00:39 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:00:39 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:00:48 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:00:49 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:00:49 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:01:27 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:01:28 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:01:30 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:01:31 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:01:31 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:01:47 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:01:47 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:01:52 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:01:53 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:01:53 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:02:10 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:02:10 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:10:24 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:10:24 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:11:14 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:11:14 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:11:18 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:11:19 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:11:19 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:11:19 DEBUG WeatherToDoc:19 - Weather is converting to doc
+2020-02-28 18:16:00 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:00 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:21 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:21 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:37 INFO  WeatherReporterApplication:15 - Starting weather API
+2020-02-28 18:16:39 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:16:40 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:16:40 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:16:40 DEBUG WeatherToDoc:19 - Weather is converting to doc
+2020-02-28 18:16:56 INFO  DarkSky:36 - Getting request from Dark Sky
+2020-02-28 18:16:57 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-28 18:16:57 DEBUG DarkSkyPOJOToWeather:12 - DarkSkyPOJO is converting to weather
+2020-02-28 18:16:57 DEBUG WeatherToDoc:19 - Weather is converting to doc
+2020-02-28 18:18:57 INFO  WeatherReporterApplication:14 - Starting weather API
+2020-02-28 18:18:57 INFO  WeatherReporterApplication:14 - Starting weather API
+2020-02-28 18:19:04 INFO  MainController:114 - Getting weather description from all weather API
+2020-02-28 18:19:04 INFO  WeatherStack:37 - Getting request from Weather Stack
+2020-02-28 18:19:04 DEBUG JsonToWeatherStackPOJO:14 - Json is converting to WeatherStackPOJO
+2020-02-28 18:19:04 DEBUG WeatherStackPOJOToWeather:13 - WeatherStackPOJO is converting to Weather
+2020-02-28 18:19:04 INFO  OpenWeatherMap:38 - Getting request from Open Weather Map
+2020-02-28 18:19:05 DEBUG JsonToOpenWeatherPOJO:14 - Json is converting to OpenWeatherPOJO
+2020-02-28 18:19:05 DEBUG OpenWeatherPOJOToWeather:13 - OpenWeatherPOJO is converting to Weather
+2020-02-28 18:19:05 INFO  DarkSky:36 - Getting request from Dark Sky
+2020-02-28 18:19:05 DEBUG JsonToDarkSkyPOJO:13 - Json is converting to DarkSkyPOJO
+2020-02-28 18:19:05 DEBUG DarkSkyPOJOToWeather:12 - DarkSkyPOJO is converting to weather
+2020-02-28 18:19:05 INFO  WeatherBit:37 - Getting request from Weather Bit
+2020-02-28 18:19:06 DEBUG JsonToWeatherBitPOJO:13 - Json is converting to WeatherBitPOJO
+2020-02-28 18:19:06 DEBUG WeatherBitPOJOToWeather:13 - WeatherBitPOJO is converting to Weather
