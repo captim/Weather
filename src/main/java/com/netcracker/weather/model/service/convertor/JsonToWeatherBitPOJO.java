@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.springframework.core.convert.converter.Converter;
 
 public class JsonToWeatherBitPOJO implements Converter<String, WeatherBitPOJO> {
-    final static Logger logger = Logger.getLogger(JsonToWeatherBitPOJO.class);
+    private final static Logger logger = Logger.getLogger(JsonToWeatherBitPOJO.class);
     @Override
     public WeatherBitPOJO convert(String s) {
         logger.debug("Json is converting to WeatherBitPOJO");

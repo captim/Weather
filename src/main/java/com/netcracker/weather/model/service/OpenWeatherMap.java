@@ -26,7 +26,7 @@ public class OpenWeatherMap implements WeatherAPI {
     @Value(value = "${api.weather.openweathermap.key}")
     private String key;
     private final ConversionService conversionService;
-    final static Logger logger = Logger.getLogger(OpenWeatherMap.class);
+    private final static Logger logger = Logger.getLogger(OpenWeatherMap.class);
 
     @Autowired
     public OpenWeatherMap(ConversionService conversionService) {

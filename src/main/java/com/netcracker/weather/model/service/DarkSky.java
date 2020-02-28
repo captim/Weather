@@ -2,9 +2,7 @@ package com.netcracker.weather.model.service;
 
 import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
-import com.netcracker.weather.model.service.convertor.WeatherStackPOJOToWeather;
 import com.netcracker.weather.model.service.pojo.darksky.DarkSkyPOJO;
-import com.netcracker.weather.model.service.pojo.openweather.Main;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -27,7 +25,7 @@ public class DarkSky implements WeatherAPI {
     @Value(value = "${api.weather.darksky.key}")
     private String key;
     private final ConversionService conversionService;
-    final static Logger logger = Logger.getLogger(DarkSky.class);
+    private final static Logger logger = Logger.getLogger(DarkSky.class);
     @Autowired
     public DarkSky(ConversionService conversionService) {
         this.conversionService = conversionService;

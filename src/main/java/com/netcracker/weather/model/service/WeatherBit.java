@@ -26,7 +26,7 @@ public class WeatherBit implements WeatherAPI {
     @Value(value = "${api.weather.weatherbit.key}")
     private String key;
     private final ConversionService conversionService;
-    final static Logger logger = Logger.getLogger(WeatherBit.class);
+    private final static Logger logger = Logger.getLogger(WeatherBit.class);
     @Autowired
     public WeatherBit(ConversionService conversionService) {
         this.conversionService = conversionService;

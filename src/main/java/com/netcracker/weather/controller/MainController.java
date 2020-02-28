@@ -2,34 +2,30 @@ package com.netcracker.weather.controller;
 
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.WeatherAPI;
+import com.netcracker.weather.model.service.convertor.WeatherToDoc;
 import org.apache.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.util.IOUtils;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
 @RestController
 public class MainController {
-    final static Logger logger = Logger.getLogger(MainController.class);
+    private final static Logger logger = Logger.getLogger(MainController.class);
     private final List<WeatherAPI> list;
     private final WeatherAPI weatherStack;
     private final WeatherAPI openWeatherMap;
@@ -37,15 +33,17 @@ public class MainController {
     private final WeatherAPI weatherBit;
     private static String gettingDescription = "Getting weather description from ";
     public static String gettingRequest = "Getting request from ";
+    private final WeatherToDoc weatherToDoc;
     @Value(value = "${api.weather.numberofthread}")
-    int numberOfThread;
+    private int numberOfThread;
     @Autowired
     public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap,
-                          WeatherAPI darkSky, WeatherAPI weatherBit) {
+                          WeatherAPI darkSky, WeatherAPI weatherBit, WeatherToDoc weatherToDoc) {
         this.weatherStack = weatherStack;
         this.openWeatherMap = openWeatherMap;
         this.darkSky = darkSky;
         this.weatherBit = weatherBit;
+        this.weatherToDoc = weatherToDoc;
         list = new ArrayList<>();
         list.add(this.weatherStack);
         list.add(this.openWeatherMap);
@@ -55,25 +53,41 @@ public class MainController {
     @RequestMapping(value = "/w1")
     public Weather weatherStack(@RequestParam(defaultValue = "sumy")
                                             String city)
-            throws IOException, InvalidFormatException {
+            throws IOException {
         logger.info(gettingDescription + weatherStack.getId());
-        XWPFDocument document = new XWPFDocument(OPCPackage.open("template.docx"));
-        for (XWPFParagraph paragraph : document.getParagraphs()) {
-            for (XWPFRun run : paragraph.getRuns()) {
-                String text = run.getText(0);
-                text = text.replace("WEATHERAPI", "John");
-                run.setText(text,0);
-                System.out.println(text);
-            }
-        }
         return weatherStack.getRequest(city);
     }
-    @RequestMapping(value = "/get-doc",method = RequestMethod.GET, produces="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-    public byte[] getDoc() throws IOException {
-        File file = new File("template.docx");
-        FileInputStream fis = new FileInputStream(file);
-        byte[] doc = IOUtils.toByteArray(fis);
-        return doc;
+    @RequestMapping(value = "/get-doc",method = RequestMethod.GET)
+    public ResponseEntity<InputStreamResource> getDoc
+            (@RequestParam(defaultValue = "weatherStack") String api)
+            throws IOException, InvalidFormatException {
+        WeatherAPI weatherApi = weatherStack;
+        switch (api) {
+            case "weatherStack":
+                weatherApi = weatherStack;
+                break;
+            case "OpenWeatherMap":
+                weatherApi = openWeatherMap;
+                break;
+            case "DarkSky":
+                weatherApi = darkSky;
+                break;
+            case "WeatherBit":
+                weatherApi = weatherBit;
+                break;
+        }
+        Weather weather = weatherApi.getRequest("sumy");
+        File template = new File("template.docx");
+        byte[] doc = weatherToDoc.writeWeatherToDocByTemplate(template,weather);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentDispositionFormData("attachment", "WeatherWordFile.docx");
+        headers.setContentType(new MediaType("application", "vnd.openxmlformats-officedocument.wordprocessingml.document"));
+        headers.setContentLength(doc.length);
+        InputStreamResource inputStreamResource = new InputStreamResource
+                (new ByteArrayInputStream(doc));
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(inputStreamResource);
     }
     @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)

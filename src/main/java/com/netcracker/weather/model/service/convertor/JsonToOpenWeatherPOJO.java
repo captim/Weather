@@ -8,7 +8,7 @@ import org.springframework.core.convert.converter.Converter;
 
 public class JsonToOpenWeatherPOJO
         implements Converter<String, OpenWeatherPOJO> {
-    final static Logger logger = Logger.getLogger(JsonToOpenWeatherPOJO.class);
+    private final static Logger logger = Logger.getLogger(JsonToOpenWeatherPOJO.class);
     @Override
     public OpenWeatherPOJO convert(String s) {
         logger.debug("Json is converting to OpenWeatherPOJO");

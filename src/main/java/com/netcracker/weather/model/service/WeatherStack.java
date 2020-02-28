@@ -26,7 +26,7 @@ public class WeatherStack implements WeatherAPI {
     @Value(value = "${api.weather.weatherstack.key}")
     private String key;
     private final ConversionService conversionService;
-    final static Logger logger = Logger.getLogger(WeatherStack.class);
+    private final static Logger logger = Logger.getLogger(WeatherStack.class);
     @Autowired
     public WeatherStack(ConversionService conversionService) {
         this.conversionService = conversionService;
