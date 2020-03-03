@@ -34,11 +34,13 @@ public class MainController {
     private static String gettingDescription = "Getting weather description from ";
     public static String gettingRequest = "Getting request from ";
     private final WeatherToDoc weatherToDoc;
+    private final File template = new File("template.docx");
     @Value(value = "${api.weather.numberofthread}")
     private int numberOfThread;
     @Autowired
     public MainController(WeatherAPI weatherStack, WeatherAPI openWeatherMap,
-                          WeatherAPI darkSky, WeatherAPI weatherBit, WeatherToDoc weatherToDoc) {
+                          WeatherAPI darkSky, WeatherAPI weatherBit,
+                          WeatherToDoc weatherToDoc) {
         this.weatherStack = weatherStack;
         this.openWeatherMap = openWeatherMap;
         this.darkSky = darkSky;
@@ -50,18 +52,12 @@ public class MainController {
         list.add(this.darkSky);
         list.add(this.weatherBit);
     }
-    @RequestMapping(value = "/w1")
-    public Weather weatherStack(@RequestParam(defaultValue = "sumy")
-                                            String city)
-            throws IOException {
-        logger.info(gettingDescription + weatherStack.getId());
-        return weatherStack.getRequest(city);
-    }
     @RequestMapping(value = "/get-doc",method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> getDoc
-            (@RequestParam(defaultValue = "weatherStack") String api)
+            (@RequestParam(defaultValue = "weatherStack") String api,
+             @RequestParam(defaultValue = "sumy") String city)
             throws IOException, InvalidFormatException {
-        WeatherAPI weatherApi = weatherStack;
+        WeatherAPI weatherApi;
         switch (api) {
             case "weatherStack":
                 weatherApi = weatherStack;
@@ -72,12 +68,11 @@ public class MainController {
             case "DarkSky":
                 weatherApi = darkSky;
                 break;
-            case "WeatherBit":
+            default:
                 weatherApi = weatherBit;
                 break;
         }
-        Weather weather = weatherApi.getRequest("sumy");
-        File template = new File("template.docx");
+        Weather weather = weatherApi.getRequest(city);
         byte[] doc = weatherToDoc.writeWeatherToDocByTemplate(template,weather);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData("attachment", "WeatherWordFile.docx");
@@ -88,6 +83,13 @@ public class MainController {
         return ResponseEntity.ok()
                 .headers(headers)
                 .body(inputStreamResource);
+    }
+    @RequestMapping(value = "/w1")
+    public Weather weatherStack(@RequestParam(defaultValue = "sumy")
+                                        String city)
+            throws IOException {
+        logger.info(gettingDescription + weatherStack.getId());
+        return weatherStack.getRequest(city);
     }
     @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)
