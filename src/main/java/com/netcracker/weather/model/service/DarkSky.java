@@ -32,14 +32,20 @@ public class DarkSky implements WeatherAPI {
     }
 
     @Override
-        public Weather getRequest(String city) throws IOException {
+        public Weather getRequest(String city) {
         logger.info(MainController.gettingRequest + getId());
         HttpClient httpClient = HttpClients.createDefault();
         String http = "https://api.darksky.net/forecast/"
                  + key + "/50.9216,34.80029";
         HttpGet httpGet = new HttpGet(http);
-        HttpResponse httpResponse = httpClient.execute(httpGet);
-        return createWeather(EntityUtils.toString(httpResponse.getEntity()));
+        HttpResponse httpResponse = null;
+        try {
+            httpResponse = httpClient.execute(httpGet);
+            return createWeather(EntityUtils.toString(httpResponse.getEntity()));
+        } catch (IOException e) {
+            logger.warn(e.getMessage());
+            return null;
+        }
     }
 
     @Override

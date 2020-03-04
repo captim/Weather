@@ -34,7 +34,7 @@ public class OpenWeatherMap implements WeatherAPI {
     }
 
     @Override
-    public Weather getRequest(String city) throws IOException {
+    public Weather getRequest(String city) {
         logger.info(MainController.gettingRequest + getId());
         String url = "http://api.openweathermap.org/data/2.5/weather";
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
@@ -42,8 +42,14 @@ public class OpenWeatherMap implements WeatherAPI {
                 .queryParam("APPID", key);
         HttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(builder.build().encode().toUriString());
-        HttpResponse httpResponse = httpClient.execute(httpGet);
-        return createWeather(EntityUtils.toString(httpResponse.getEntity()));
+        HttpResponse httpResponse = null;
+        try {
+            httpResponse = httpClient.execute(httpGet);
+            return createWeather(EntityUtils.toString(httpResponse.getEntity()));
+        } catch (IOException e) {
+            logger.warn(e.getMessage());
+            return null;
+        }
     }
 
     public Weather createWeather(String json) {

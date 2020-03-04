@@ -15,9 +15,15 @@ import java.io.IOException;
 @Service(value = "weatherToDoc")
 public class WeatherToDoc {
     private final static Logger logger = Logger.getLogger(WeatherToDoc.class);
-    public byte[] writeWeatherToDocByTemplate(File template, Weather weather) throws IOException, InvalidFormatException {
+    public byte[] writeWeatherToDocByTemplate(File template, Weather weather) {
         logger.debug("Weather is converting to doc");
-        XWPFDocument document = new XWPFDocument(OPCPackage.open(template));
+        XWPFDocument document = null;
+        try {
+            document = new XWPFDocument(OPCPackage.open(template));
+        } catch (IOException | InvalidFormatException e) {
+            logger.warn(e.getMessage());
+            return null;
+        }
         for (XWPFParagraph paragraph : document.getParagraphs()) {
             for (XWPFRun run : paragraph.getRuns()) {
                 String text = run.getText(0);
@@ -31,7 +37,12 @@ public class WeatherToDoc {
             }
         }
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        document.write(stream);
+        try {
+            document.write(stream);
+        } catch (IOException e) {
+            logger.warn(e.getMessage());
+            return null;
+        }
         return stream.toByteArray();
     }
 }

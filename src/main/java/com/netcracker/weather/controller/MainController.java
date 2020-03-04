@@ -55,8 +55,7 @@ public class MainController {
     @RequestMapping(value = "/get-doc",method = RequestMethod.GET)
     public ResponseEntity<InputStreamResource> getDoc
             (@RequestParam(defaultValue = "weatherStack") String api,
-             @RequestParam(defaultValue = "sumy") String city)
-            throws IOException, InvalidFormatException {
+             @RequestParam(defaultValue = "sumy") String city) {
         WeatherAPI weatherApi;
         switch (api) {
             case "weatherStack":
@@ -85,34 +84,27 @@ public class MainController {
                 .body(inputStreamResource);
     }
     @RequestMapping(value = "/w1")
-    public Weather weatherStack(@RequestParam(defaultValue = "sumy")
-                                        String city)
-            throws IOException {
+    public Weather weatherStack(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherStack.getId());
         return weatherStack.getRequest(city);
     }
     @RequestMapping(value = "/w2")
-    public Weather openWeather(@RequestParam(defaultValue = "sumy") String city)
-            throws IOException {
+    public Weather openWeather(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + openWeatherMap.getId());
         return openWeatherMap.getRequest(city);
     }
     @RequestMapping(value = "/w3")
-    public Weather darkSky(@RequestParam(defaultValue = "sumy") String city)
-            throws IOException {
+    public Weather darkSky(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + darkSky.getId());
         return darkSky.getRequest(city);
     }
     @RequestMapping(value = "/w4")
-    public Weather weatherBit(@RequestParam(defaultValue = "sumy") String city)
-            throws IOException {
+    public Weather weatherBit(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherBit.getId());
         return weatherBit.getRequest(city);
     }
     @RequestMapping(value = "/w")
-    public List<Weather> allWeather(@RequestParam(defaultValue = "sumy")
-                                                String city)
-            throws ExecutionException, InterruptedException {
+    public List<Weather> allWeather(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + "all weather API");
         ExecutorService executorService =
                 Executors.newFixedThreadPool(numberOfThread);
@@ -123,7 +115,11 @@ public class MainController {
         for (WeatherAPI temp: list) {
             Future<Weather> submit =
                     completionService.submit(() -> temp.getRequest(city));
-            weatherList.add(submit.get());
+            try {
+                weatherList.add(submit.get());
+            } catch (InterruptedException | ExecutionException e) {
+                logger.warn(e.getMessage());
+            }
         }
         return weatherList;
     }
