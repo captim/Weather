@@ -33,6 +33,7 @@ public class MainController {
     private final WeatherAPI weatherBit;
     private static String gettingDescription = "Getting weather description from ";
     public static String gettingRequest = "Getting request from ";
+    public static String error = "Error message";
     private final WeatherToDoc weatherToDoc;
     private final File template = new File("template.docx");
     @Value(value = "${api.weather.numberofthread}")
@@ -117,10 +118,8 @@ public class MainController {
                     completionService.submit(() -> temp.getRequest(city));
             try {
                 weatherList.add(submit.get());
-            } catch (InterruptedException e) {
-                logger.error("InterruptedException");
-            } catch (ExecutionException e) {
-                logger.error("ExecutionException");
+            } catch (InterruptedException | ExecutionException e) {
+                logger.error(MainController.error, e);
             }
         }
         return weatherList;

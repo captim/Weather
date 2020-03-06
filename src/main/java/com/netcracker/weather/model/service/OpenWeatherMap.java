@@ -47,7 +47,7 @@ public class OpenWeatherMap implements WeatherAPI {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
         } catch (IOException e) {
-            logger.error("IOException");
+            logger.error(MainController.error, e);
             return null;
         }
     }

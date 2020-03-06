@@ -2,6 +2,7 @@ package com.netcracker.weather.model.service.convertor;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.service.pojo.weatherstack.WeatherStackPOJO;
 import org.apache.log4j.Logger;
 import org.springframework.core.convert.converter.Converter;
@@ -16,7 +17,7 @@ public class JsonToWeatherStackPOJO
         try {
             return mapper.readValue(s, WeatherStackPOJO.class);
         } catch (JsonProcessingException e) {
-            logger.error("JsonProcessingException");
+            logger.error(MainController.error, e);
             return null;
         }
     }

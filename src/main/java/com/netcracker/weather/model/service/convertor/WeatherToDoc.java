@@ -1,5 +1,6 @@
 package com.netcracker.weather.model.service.convertor;
 
+import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
 import org.apache.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -20,11 +21,9 @@ public class WeatherToDoc {
         XWPFDocument document = null;
         try {
             document = new XWPFDocument(OPCPackage.open(template));
-        } catch (IOException e) {
-            logger.error("IOException");
+        } catch (IOException | InvalidFormatException e) {
+            logger.error(MainController.error, e);
             return null;
-        } catch (InvalidFormatException e) {
-            logger.error("InvalidFormatException");
         }
         for (XWPFParagraph paragraph : document.getParagraphs()) {
             for (XWPFRun run : paragraph.getRuns()) {
@@ -42,7 +41,7 @@ public class WeatherToDoc {
         try {
             document.write(stream);
         } catch (IOException e) {
-            logger.error("IOException");
+            logger.error(MainController.error, e);
             return null;
         }
         return stream.toByteArray();
