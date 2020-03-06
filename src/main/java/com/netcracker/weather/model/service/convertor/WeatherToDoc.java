@@ -20,9 +20,11 @@ public class WeatherToDoc {
         XWPFDocument document = null;
         try {
             document = new XWPFDocument(OPCPackage.open(template));
-        } catch (IOException | InvalidFormatException e) {
-            logger.warn(e.getMessage());
+        } catch (IOException e) {
+            logger.error("IOException");
             return null;
+        } catch (InvalidFormatException e) {
+            logger.error("InvalidFormatException");
         }
         for (XWPFParagraph paragraph : document.getParagraphs()) {
             for (XWPFRun run : paragraph.getRuns()) {
@@ -40,7 +42,7 @@ public class WeatherToDoc {
         try {
             document.write(stream);
         } catch (IOException e) {
-            logger.warn(e.getMessage());
+            logger.error("IOException");
             return null;
         }
         return stream.toByteArray();

@@ -16,7 +16,7 @@ public class JsonToOpenWeatherPOJO
         try {
             return mapper.readValue(s, OpenWeatherPOJO.class);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            logger.error("JsonProcessingException");
             return null;
         }
     }

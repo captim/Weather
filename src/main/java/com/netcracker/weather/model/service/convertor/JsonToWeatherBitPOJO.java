@@ -15,7 +15,7 @@ public class JsonToWeatherBitPOJO implements Converter<String, WeatherBitPOJO> {
         try {
             return mapper.readValue(s, WeatherBitPOJO.class);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            logger.error("JsonProcessingException");
             return null;
         }
     }

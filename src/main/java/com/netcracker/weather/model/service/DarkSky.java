@@ -43,7 +43,7 @@ public class DarkSky implements WeatherAPI {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
         } catch (IOException e) {
-            logger.warn(e.getMessage());
+            logger.error("IOException");
             return null;
         }
     }

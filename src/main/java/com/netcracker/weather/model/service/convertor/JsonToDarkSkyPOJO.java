@@ -15,7 +15,7 @@ public class JsonToDarkSkyPOJO implements Converter<String, DarkSkyPOJO> {
         try {
             return mapper.readValue(s, DarkSkyPOJO.class);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            logger.error("JsonProcessingException");
             return null;
         }
     }

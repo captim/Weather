@@ -117,8 +117,10 @@ public class MainController {
                     completionService.submit(() -> temp.getRequest(city));
             try {
                 weatherList.add(submit.get());
-            } catch (InterruptedException | ExecutionException e) {
-                logger.warn(e.getMessage());
+            } catch (InterruptedException e) {
+                logger.error("InterruptedException");
+            } catch (ExecutionException e) {
+                logger.error("ExecutionException");
             }
         }
         return weatherList;
