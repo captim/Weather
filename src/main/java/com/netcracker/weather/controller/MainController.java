@@ -88,25 +88,41 @@ public class MainController {
     @RequestMapping(value = "/w1")
     public Weather weatherStack(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherStack.getId());
-        return weatherStack.getRequest(city);
+        Weather weather = weatherStack.getRequest(city);
+        if (weather == null) {
+            throw new NullPointerException();
+        }
+        return weather;
     }
     @Cacheable(value = "openWeather", unless="#result == null")
     @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + openWeatherMap.getId());
-        return openWeatherMap.getRequest(city);
+        Weather weather = openWeatherMap.getRequest(city);
+        if (weather == null) {
+            throw new NullPointerException();
+        }
+        return weather;
     }
     @Cacheable(value = "darkSky", unless="#result == null")
     @RequestMapping(value = "/w3")
     public Weather darkSky(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + darkSky.getId());
-        return darkSky.getRequest(city);
+        Weather weather = darkSky.getRequest(city);
+        if (weather == null) {
+            throw new NullPointerException();
+        }
+        return weather;
     }
     @Cacheable(value = "weatherBit", unless="#result == null")
     @RequestMapping(value = "/w4")
     public Weather weatherBit(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherBit.getId());
-        return weatherBit.getRequest(city);
+        Weather weather = weatherBit.getRequest(city);
+        if (weather == null) {
+            throw new NullPointerException();
+        }
+        return weather;
     }
     @RequestMapping(value = "/w")
     public List<Weather> allWeather(@RequestParam(defaultValue = "sumy") String city) {
