@@ -34,7 +34,8 @@ public class MainController {
     public static String gettingRequest = "Getting request from ";
     public static String error = "Error message";
     private final WeatherToDoc weatherToDoc;
-    private final File template = new File("template.docx");
+    private final File template = new File("src" + File.separator
+            + "main" + File.separator + "resources" + File.separator +"template.docx");
     @Value(value = "${api.weather.numberofthread}")
     private int numberOfThread;
     @Autowired
