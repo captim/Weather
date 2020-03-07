@@ -16,7 +16,7 @@ public class JsonToWeatherStackPOJO
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.readValue(s, WeatherStackPOJO.class);
-        } catch (JsonProcessingException e) {
+        } catch (JsonProcessingException | NullPointerException e) {
             logger.error(MainController.error, e);
             return null;
         }

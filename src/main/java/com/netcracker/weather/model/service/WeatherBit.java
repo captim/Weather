@@ -41,7 +41,7 @@ public class WeatherBit implements WeatherAPI {
                 .queryParam("key", key);
         HttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(builder.build().encode().toUriString());
-        HttpResponse httpResponse = null;
+        HttpResponse httpResponse;
         try {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
@@ -55,6 +55,9 @@ public class WeatherBit implements WeatherAPI {
         Weather weather =
                 conversionService.convert(conversionService.convert(json,
                 WeatherBitPOJO.class), Weather.class);
+        if (weather == null) {
+            return null;
+        }
         weather.setApiId(id);
         return weather;
     }

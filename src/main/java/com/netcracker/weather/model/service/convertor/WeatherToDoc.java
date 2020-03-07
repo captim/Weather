@@ -17,8 +17,11 @@ import java.io.IOException;
 public class WeatherToDoc {
     private final static Logger logger = Logger.getLogger(WeatherToDoc.class);
     public byte[] writeWeatherToDocByTemplate(File template, Weather weather) {
+        if (weather == null) {
+            return null;
+        }
         logger.debug("Weather is converting to doc");
-        XWPFDocument document = null;
+        XWPFDocument document;
         try {
             document = new XWPFDocument(OPCPackage.open(template));
         } catch (IOException | InvalidFormatException e) {

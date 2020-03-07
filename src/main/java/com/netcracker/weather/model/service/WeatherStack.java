@@ -41,7 +41,7 @@ public class WeatherStack implements WeatherAPI {
                 .queryParam("query", city);
         HttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(builder.build().encode().toUriString());
-        HttpResponse httpResponse = null;
+        HttpResponse httpResponse;
         try {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
@@ -54,6 +54,9 @@ public class WeatherStack implements WeatherAPI {
         Weather weather =
                 conversionService.convert(conversionService.convert(json,
                 WeatherStackPOJO.class), Weather.class);
+        if (weather == null) {
+            return null;
+        }
         weather.setApiId(id);
         return weather;
     }

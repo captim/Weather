@@ -4,9 +4,9 @@ import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.WeatherAPI;
 import com.netcracker.weather.model.service.convertor.WeatherToDoc;
 import org.apache.log4j.Logger;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -84,21 +83,25 @@ public class MainController {
                 .headers(headers)
                 .body(inputStreamResource);
     }
+    @Cacheable(value = "weatherStack", unless="#result == null")
     @RequestMapping(value = "/w1")
     public Weather weatherStack(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherStack.getId());
         return weatherStack.getRequest(city);
     }
+    @Cacheable(value = "openWeather", unless="#result == null")
     @RequestMapping(value = "/w2")
     public Weather openWeather(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + openWeatherMap.getId());
         return openWeatherMap.getRequest(city);
     }
+    @Cacheable(value = "darkSky", unless="#result == null")
     @RequestMapping(value = "/w3")
     public Weather darkSky(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + darkSky.getId());
         return darkSky.getRequest(city);
     }
+    @Cacheable(value = "weatherBit", unless="#result == null")
     @RequestMapping(value = "/w4")
     public Weather weatherBit(@RequestParam(defaultValue = "sumy") String city) {
         logger.info(gettingDescription + weatherBit.getId());

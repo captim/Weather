@@ -38,7 +38,7 @@ public class DarkSky implements WeatherAPI {
         String http = "https://api.darksky.net/forecast/"
                  + key + "/50.9216,34.80029";
         HttpGet httpGet = new HttpGet(http);
-        HttpResponse httpResponse = null;
+        HttpResponse httpResponse;
         try {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
@@ -53,6 +53,9 @@ public class DarkSky implements WeatherAPI {
         Weather weather =
                 conversionService.convert(conversionService.convert(json,
                         DarkSkyPOJO.class), Weather.class);
+        if (weather == null) {
+            return null;
+        }
         weather.setApiId(id);
         return weather;
     }

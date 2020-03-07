@@ -42,7 +42,7 @@ public class OpenWeatherMap implements WeatherAPI {
                 .queryParam("APPID", key);
         HttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(builder.build().encode().toUriString());
-        HttpResponse httpResponse = null;
+        HttpResponse httpResponse;
         try {
             httpResponse = httpClient.execute(httpGet);
             return createWeather(EntityUtils.toString(httpResponse.getEntity()));
@@ -56,6 +56,9 @@ public class OpenWeatherMap implements WeatherAPI {
         Weather weather =
                 conversionService.convert(conversionService.convert(json,
                 OpenWeatherPOJO.class), Weather.class);
+        if (weather == null) {
+            return null;
+        }
         weather.setApiId(id);
         return weather;
     }

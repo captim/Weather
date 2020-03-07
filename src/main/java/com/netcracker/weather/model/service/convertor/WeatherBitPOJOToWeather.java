@@ -1,5 +1,6 @@
 package com.netcracker.weather.model.service.convertor;
 
+import com.netcracker.weather.controller.MainController;
 import com.netcracker.weather.model.Weather;
 import com.netcracker.weather.model.service.pojo.weatherbit.WeatherBitPOJO;
 import org.apache.log4j.Logger;
@@ -11,11 +12,15 @@ public class WeatherBitPOJOToWeather
     @Override
     public Weather convert(WeatherBitPOJO w) {
         logger.debug("WeatherBitPOJO is converting to Weather");
-        return new Weather(w.getData().get(0).getTemp(),
-                w.getData().get(0).getWeather().getDescription(),
-                w.getData().get(0).getWindSpd(),
-                w.getData().get(0).getWindDir(),
-                w.getData().get(0).getClouds());
-
+        try {
+            return new Weather(w.getData().get(0).getTemp(),
+                    w.getData().get(0).getWeather().getDescription(),
+                    w.getData().get(0).getWindSpd(),
+                    w.getData().get(0).getWindDir(),
+                    w.getData().get(0).getClouds());
+        } catch (NullPointerException e) {
+            logger.error(MainController.error, e);
+            return null;
+        }
     }
 }

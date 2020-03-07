@@ -16,7 +16,7 @@ public class JsonToOpenWeatherPOJO
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.readValue(s, OpenWeatherPOJO.class);
-        } catch (JsonProcessingException e) {
+        } catch (JsonProcessingException | NullPointerException e) {
             logger.error(MainController.error, e);
             return null;
         }
