@@ -34,8 +34,6 @@ public class MainController {
     public static String gettingRequest = "Getting request from ";
     public static String error = "Error message";
     private final WeatherToDoc weatherToDoc;
-    private final File template = new File("src" + File.separator
-            + "main" + File.separator + "resources" + File.separator +"template.docx");
     @Value(value = "${api.weather.numberofthread}")
     private int numberOfThread;
     @Autowired
@@ -73,7 +71,7 @@ public class MainController {
                 break;
         }
         Weather weather = weatherApi.getRequest(city);
-        byte[] doc = weatherToDoc.writeWeatherToDocByTemplate(template,weather);
+        byte[] doc = weatherToDoc.writeWeatherToDocByTemplate(weather);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData("attachment", "WeatherWordFile.docx");
         headers.setContentType(new MediaType("application", "vnd.openxmlformats-officedocument.wordprocessingml.document"));
@@ -141,6 +139,7 @@ public class MainController {
                 logger.error(MainController.error, e);
             }
             try {
+                assert submit != null;
                 weatherList.add(submit.get());
             } catch (InterruptedException | ExecutionException | NullPointerException e) {
                 logger.error(MainController.error, e);

@@ -16,7 +16,9 @@ import java.io.IOException;
 @Service(value = "weatherToDoc")
 public class WeatherToDoc {
     private final static Logger logger = Logger.getLogger(WeatherToDoc.class);
-    public byte[] writeWeatherToDocByTemplate(File template, Weather weather) {
+    private final File template
+            = new File(this.getClass().getClassLoader().getResource("template.docx").getFile());
+    public byte[] writeWeatherToDocByTemplate(Weather weather) {
         if (weather == null) {
             return null;
         }
