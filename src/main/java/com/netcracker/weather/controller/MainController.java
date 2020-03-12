@@ -134,11 +134,15 @@ public class MainController {
                 = new ExecutorCompletionService<>(executorService);
         List<Weather> weatherList = new ArrayList<>();
         for (WeatherAPI temp: list) {
-            Future<Weather> submit =
-                    completionService.submit(() -> temp.getRequest(city));
+            Future<Weather> submit = null;
+            try {
+                submit = completionService.submit(() -> temp.getRequest(city));
+            } catch (NullPointerException e) {
+                logger.error(MainController.error, e);
+            }
             try {
                 weatherList.add(submit.get());
-            } catch (InterruptedException | ExecutionException e) {
+            } catch (InterruptedException | ExecutionException | NullPointerException e) {
                 logger.error(MainController.error, e);
             }
         }
